@@ -19,14 +19,15 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun TopAppBar(
-//    scaffoldState: ScaffoldState?,
-//    scope: CoroutineScope?
+    scaffoldState: ScaffoldState?,
+    scope: CoroutineScope?,
+    cartScope: CoroutineScope
 ) {
     Row(horizontalArrangement = Arrangement.SpaceBetween,
     modifier = Modifier.fillMaxWidth(),
     verticalAlignment = Alignment.CenterVertically) {
         IconButton(onClick = {
-//            scope?.launch { scaffoldState?.drawerState?.open() }
+            scope?.launch { scaffoldState?.drawerState?.open() }
         }){
             Image(
                 painter = painterResource(id = R.drawable.ic_hamburger_menu),
@@ -40,7 +41,9 @@ fun TopAppBar(
             modifier = Modifier.fillMaxWidth(0.5F)
                 .padding(horizontal = 20.dp)
         )
-        IconButton(onClick = { }) {
+        IconButton(onClick = {
+            cartScope?.launch { scaffoldState?.drawerState?.open() }
+        }) {
             Image(
                 painter = painterResource(id = R.drawable.ic_cart),
                 contentDescription = "Cart",

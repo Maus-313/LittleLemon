@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
@@ -29,7 +30,7 @@ fun DishDetails(id: Int) {
     val dish = requireNotNull(DishRepository.getDish(id))
     // Throws an IllegalArgumentException if the value is null. Otherwise returns the not null value.
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        TopAppBar()
+//        TopAppBar(scaffoldState,scope)
         Image(
             painter = painterResource(id = dish.imageResource),
             contentDescription = "Dish image",
