@@ -3,12 +3,10 @@ package com.example.littlelemon
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Scaffold
-import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavHostController
-import kotlinx.coroutines.CoroutineScope
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -23,7 +21,10 @@ fun HomeScreen(navController: NavHostController) {
             LeftDrawablePanel(
                 scaffoldState,scope
             )
-            RightKartPanel(scaffoldState = scaffoldState, scope = cartScope)
+            RightKartPanel(
+                scaffoldState = scaffoldState,
+                scope = cartScope,
+            )
         },
         topBar = {
             TopAppBar(

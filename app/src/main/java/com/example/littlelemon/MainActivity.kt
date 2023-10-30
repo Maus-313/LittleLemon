@@ -16,7 +16,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             LittleLemonTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = Home.route) {
+                NavHost(navController = navController, startDestination = Login.route) {
+                    composable(Login.route){
+                        LoginScreen(navController = navController)
+                    }
                     composable(Home.route) {
                         HomeScreen(navController)
                     }
